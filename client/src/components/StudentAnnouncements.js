@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import FeatherIcon from './FeatherIcon';
 import './StudentModules.css';
 import { fetchOrMock } from '../utils/mockApi';
@@ -10,7 +10,7 @@ function StudentAnnouncements() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  const loadAnnouncements = async () => {
+  const loadAnnouncements = useCallback(async () => {
     try {
       setLoading(true);
       setError('');
@@ -27,13 +27,14 @@ function StudentAnnouncements() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [user?.department, user?.role]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadAnnouncements();
     const intervalId = setInterval(loadAnnouncements, 15000);
     return () => clearInterval(intervalId);
-  }, [user?.role, user?.department]);
+  }, [loadAnnouncements]);
 
   const formatDate = (value) => {
     if (!value) return 'N/A';

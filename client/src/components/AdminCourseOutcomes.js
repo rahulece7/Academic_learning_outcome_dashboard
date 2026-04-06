@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import './AdminComponents.css';
 import FeatherIcon from './FeatherIcon';
 import Card from './ui/Card';
@@ -91,7 +91,7 @@ function AdminCourseOutcomes() {
     'Design Patterns Assignment'
   ];
 
-  const loadRows = async () => {
+  const loadRows = useCallback(async () => {
     try {
       setError('');
       const response = await fetchOrMock('/api/outcomes');
@@ -117,11 +117,12 @@ function AdminCourseOutcomes() {
       setError(err.message || 'Failed to load outcomes');
       setRows(fallbackRows);
     }
-  };
+  }, [fallbackRows]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadRows();
-  }, [fallbackRows]);
+  }, [loadRows]);
 
   const updateLocalField = (id, key, value) => {
     setRows((prev) => prev.map((row) => (row.id === id ? { ...row, [key]: value } : row)));

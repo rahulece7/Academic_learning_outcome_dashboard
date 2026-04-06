@@ -36,7 +36,7 @@ function AdminSubmissionVerifications() {
 
   useEffect(() => {
     fetchItems(filters);
-  }, [fetchItems]);
+  }, [fetchItems, filters]);
 
   const stats = useMemo(() => ({
     total: items.length,

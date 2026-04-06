@@ -19,10 +19,7 @@ function StudentPapers() {
     status: 'Presented'
   });
 
-  useEffect(() => {
-    fetchPapers();
-  }, [user]);
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchPapers = useCallback(async () => {
     try {
       setLoading(true);
@@ -40,6 +37,11 @@ function StudentPapers() {
       setLoading(false);
     }
   }, [user?.id]);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    fetchPapers();
+  }, [fetchPapers]);
 
   const stats = useMemo(() => ({
     total: papers.length,

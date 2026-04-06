@@ -20,10 +20,7 @@ function StudentProjects() {
     status: 'In Progress'
   });
 
-  useEffect(() => {
-    fetchProjects();
-  }, [user]);
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchProjects = useCallback(async () => {
     try {
       setLoading(true);
@@ -41,6 +38,11 @@ function StudentProjects() {
       setLoading(false);
     }
   }, [user?.id]);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps, no-use-before-define
+  useEffect(() => {
+    fetchProjects();
+  }, [fetchProjects]);
 
   const stats = useMemo(() => ({
     total: projects.length,

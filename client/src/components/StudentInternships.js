@@ -20,10 +20,7 @@ function StudentInternships() {
     status: 'Completed'
   });
 
-  useEffect(() => {
-    fetchInternships();
-  }, [user]);
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchInternships = useCallback(async () => {
     try {
       setLoading(true);
@@ -41,6 +38,11 @@ function StudentInternships() {
       setLoading(false);
     }
   }, [user?.id]);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    fetchInternships();
+  }, [fetchInternships]);
 
   const stats = useMemo(() => ({
     total: internships.length,

@@ -19,10 +19,7 @@ function StudentCourses() {
     status: 'Completed'
   });
 
-  useEffect(() => {
-    fetchCourses();
-  }, [user]);
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchCourses = useCallback(async () => {
     try {
       setLoading(true);
@@ -40,6 +37,11 @@ function StudentCourses() {
       setLoading(false);
     }
   }, [user?.id]);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    fetchCourses();
+  }, [fetchCourses]);
 
   const stats = useMemo(() => ({
     total: courses.length,
