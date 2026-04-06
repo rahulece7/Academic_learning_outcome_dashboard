@@ -1,0 +1,69 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Backend 5001",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"start"
+			],
+			"isBackground": true,
+			"group": "build"
+		},
+		{
+			"label": "Run Backend Server",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"Set-Location server; $env:PORT='5001'; npm start"
+			],
+			"isBackground": true,
+			"group": "build"
+		},
+		{
+			"label": "Start Backend In Server",
+			"type": "shell",
+			"command": "Set-Location server; $env:PORT='5001'; npm start",
+			"isBackground": true,
+			"group": "build"
+		},
+		{
+			"label": "Start Frontend In Client",
+			"type": "shell",
+			"command": "Set-Location client; npm start",
+			"isBackground": true,
+			"group": "build"
+		},
+		{
+			"label": "Backend Clean Start",
+			"type": "shell",
+			"command": "Set-Location server; $env:PORT='5001'; npm start",
+			"isBackground": true,
+			"group": "build"
+		},
+		{
+			"label": "Frontend Clean Start",
+			"type": "shell",
+			"command": "Set-Location client; npm start",
+			"isBackground": true,
+			"group": "build"
+		},
+		{
+			"label": "Frontend BrowserNone",
+			"type": "shell",
+			"command": "Set-Location client; $env:BROWSER='none'; npm start",
+			"isBackground": true,
+			"group": "build"
+		},
+		{
+			"label": "Frontend Port 3001",
+			"type": "shell",
+			"command": "Set-Location client; $env:BROWSER='none'; $env:PORT='3001'; npm start",
+			"isBackground": true,
+			"group": "build"
+		}
+	]
+}

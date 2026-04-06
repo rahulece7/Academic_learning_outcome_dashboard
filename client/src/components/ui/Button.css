@@ -1,0 +1,98 @@
+.ds-btn{ font-family: inherit; border: none; }
+.ds-btn.primary{ box-shadow: var(--shadow-2); }
+.ds-btn.ghost{ background:transparent; border:1px solid rgba(0,0,0,0.06); }.ds-btn{
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ds-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.ds-btn:active{ 
+  transform: translateY(0px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ds-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ds-btn-primary{
+  background: linear-gradient(135deg, var(--ds-primary), var(--ds-primary-2));
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+
+.ds-btn-primary:hover {
+  box-shadow: 0 12px 24px rgba(0, 102, 255, 0.4);
+}
+
+.ds-btn-success {
+  background: linear-gradient(135deg, var(--ds-success), #15803d);
+  color: white;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+.ds-btn-success:hover {
+  box-shadow: 0 12px 24px rgba(22, 163, 74, 0.4);
+}
+
+.ds-btn-danger {
+  background: linear-gradient(135deg, var(--ds-danger), #b91c1c);
+  color: white;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.ds-btn-danger:hover {
+  box-shadow: 0 12px 24px rgba(220, 38, 38, 0.4);
+}
+
+.ds-btn-outline{
+  background: transparent;
+  color: var(--ds-text);
+  border: 2px solid var(--border-color);
+}
+
+.ds-btn-outline:hover {
+  border-color: var(--ds-primary);
+  color: var(--ds-primary);
+  background: rgba(0, 102, 255, 0.05);
+}
+
+.ds-btn-ghost{
+  background: transparent;
+  color: var(--ds-text);
+  box-shadow: none;
+}
+
+.ds-btn-ghost:hover {
+  background: rgba(0, 102, 255, 0.1);
+}
+
+.ds-btn-sm {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+
+.ds-btn-lg {
+  padding: 16px 28px;
+  font-size: 1.05rem;
+}
+
+.ds-btn-block {
+  width: 100%;
+}

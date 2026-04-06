@@ -1,0 +1,39 @@
+
+> academic-dashboard-server@1.0.0 start
+> node index.js
+
+✅ Academic Learning Outcome Dashboard API running on port 5001
+
+📚 Available Routes:
+  
+Authentication:
+  POST /api/login
+
+Student Routes:
+  GET /api/student/profile
+  GET /api/outcomes - Get all learning outcomes
+  POST /api/outcomes - Create outcome
+  GET /api/projects - Get student projects
+  POST /api/projects - Create project
+  GET /api/courses - Get student courses
+  POST /api/courses - Create course
+  GET /api/internships - Get internships
+  POST /api/internships - Create internship
+  GET /api/papers - Get papers
+  POST /api/papers - Create paper
+
+Admin Routes:
+  GET /api/admin/students - Get all students
+  GET /api/admin/students/:id - Get student
+  PUT /api/admin/students/:id - Update student
+  DELETE /api/admin/students/:id - Delete student
+  GET /api/admin/verifications - Get internship/paper/course submissions
+  PUT /api/admin/verifications/:type/:id/review - Approve or reject submission
+  GET /api/admin/certifications - Get certificate submissions
+  PUT /api/admin/certifications/:id/review - Approve or reject submission
+  GET /api/admin/certifications/:id/download - Download certificate
+  GET /api/admin/analytics - Get analytics data
+
+Health & Status:
+  GET /api/health - Server & DB health check
+  

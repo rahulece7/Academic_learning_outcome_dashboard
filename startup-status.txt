@@ -1,0 +1,22 @@
+=== NODE PROCESSES ===
+
+   Id ProcessName Path                            
+   -- ----------- ----                            
+    8 node        C:\Program Files\nodejs\node.exe
+ 3344 node        C:\Program Files\nodejs\node.exe
+ 7340 node        C:\Program Files\nodejs\node.exe
+ 9876 node        C:\Program Files\nodejs\node.exe
+12084 node        C:\Program Files\nodejs\node.exe
+
+
+
+=== PORT 3000 ===
+none
+=== PORT 5001 ===
+
+LocalAddress LocalPort OwningProcess  State
+------------ --------- -------------  -----
+::                5001          3344 Listen
+
+
+
